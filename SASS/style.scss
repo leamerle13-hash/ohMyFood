@@ -9,13 +9,17 @@
     text-decoration: none
 }
 
+body {
+    background-color: variables.$grey-background;
+}
+
 //HEADER
 
 .header__logo-container {
     @include mixins.full-width;
     @include mixins.center;
     padding: 15px 0;
-    margin-bottom: 2px;
+    background-color: white;
     box-shadow: 0 3px 10px 0 #00000026;
        .header__logo {
             height: 35px;
@@ -26,31 +30,35 @@
     @include mixins.full-width;
     @include mixins.flex-direction(row);
     @include mixins.center;
-    background-color: variables.$grey-background;
     height: 50px;
     gap: 17px;
-    margin: 2px 0px 7px 0px;
+    margin-bottom: 6px;
     box-shadow: 0px 4px 10px 0px #00000040;
 }
 
 .header__explore {
     @include mixins.flex-direction(column);
     @include mixins.center;
-    background-color: variables.$light-grey-background;
     padding: 40px;
     text-align: center;
-        .header__explore-title {
+        &-title {
             font-size: variables.$section-title;
             max-width: 275px;
         }
-        .header__explore-subtitle {
+        &-subtitle {
             font-size: variables.$subtitle;
             font-weight: 300;
             padding: 20px 0;
         }
-        .header__explore-button {
+        &-button {
             @include mixins.large-button;
+            transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
+                &:hover {
+                    opacity: 0.7;
+                    box-shadow: 0px 6px 16px 0px #00000040;
+                }
         }
+            
 }
 
 
@@ -58,6 +66,7 @@
 
 .steps {
     padding: 20px;
+    background-color: white;
         &__title {
             font-size: variables.$section-title;
             padding: 26px 0;
@@ -90,8 +99,7 @@
 //RESTAURANTS
 
 .restaurants {
-    //@include mixins.flex-direction(column);
-    padding: 66px 20px;
+    padding: 60px 20px;
     background-color: variables.$grey-background;
         &__title {
             font-size: variables.$section-title;
@@ -122,29 +130,32 @@
                 color: variables.$dark-green;
                 font-size: 14px;
             }
+            &-text-container {
+                @include mixins.flex-direction(row);
+                justify-content: space-between;
+                padding: 10px;
+                height: 30%;
+                color: black;
+                border-radius: 0 0 15px 15px;
+            }
             &-title {
                 font-size: variables.$subtitle;
+                margin-bottom: 5px;
             }
             &-location {
                 font-size: variables.$paragraph;
                 font-weight: 300;
             }
             &-heart {
-                @include mixins.center;
+                height: 20px;
+                margin-right: 10px;
+                &-container {
+                    @include mixins.center;  
+                }
             }
+            
         }
 }
-
-.restaurants__cards-text-container {
-    @include mixins.flex-direction(row);
-    background-color: white;
-    justify-content: space-between;
-    padding: 10px;
-    height: 30%;
-    color: black;
-    border-radius: 0 0 15px 15px;
-}
-
 
 
 //FOOTER
@@ -161,8 +172,12 @@
             color: white;
             padding: 0 20px;
             list-style: none;
+            &-container {
+                width: 23px;
+            }
             &-link {
                 margin-bottom: 7px;
+                @include mixins.flex-direction(row);
             }
             &-icon {
                 margin-right: 6px;
