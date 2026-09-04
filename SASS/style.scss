@@ -26,7 +26,7 @@ body {
     } 
 }
 
-.header__location__container {
+.header__location-container {
     @include mixins.full-width;
     @include mixins.flex-direction(row);
     @include mixins.center;
@@ -36,21 +36,25 @@ body {
     box-shadow: 0px 4px 10px 0px #00000040;
 }
 
-.header__explore {
+
+//MAIN
+
+.explore {
     @include mixins.flex-direction(column);
     @include mixins.center;
+    background-color: variables.$light-grey-background;
     padding: 40px;
     text-align: center;
-        &-title {
+        &__title {
             font-size: variables.$section-title;
             max-width: 275px;
         }
-        &-subtitle {
+        &__subtitle {
             font-size: variables.$subtitle;
             font-weight: 300;
             padding: 20px 0;
         }
-        &-button {
+        &__button {
             @include mixins.large-button;
             transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
                 &:hover {
@@ -60,9 +64,6 @@ body {
         }
             
 }
-
-
-//MAIN
 
 .steps {
     padding: 20px;
@@ -184,4 +185,82 @@ body {
                 font-size: 13px;
             }
         }
+}
+
+// TABLETTE
+
+@media (min-width: 768px) {
+    .header__logo-container,
+    .header__location-container {
+        box-shadow: none;
+    }
+
+    .explore__title {
+        max-width: none;
+        font-size: variables.$large-title;
+    }
+
+    .steps {
+        @include mixins.center;
+    }
+
+    .steps__content {
+        max-width: 1024px;
+        width: 100%;
+        @include mixins.flex-direction(column);
+    }
+
+    .steps__wrapper {
+        @include mixins.center;
+        @include mixins.flex-direction(row);
+        gap: 24px;
+    }
+}
+
+// DESKTOP
+
+@media (min-width: 1024px) {
+    .restaurants {
+        @include mixins.center;
+    }
+
+    .restaurant__wrapper {
+        max-width: 1024px;
+        width: 100%;
+    }
+
+    .restaurants__cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 100px;
+        row-gap: 50px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: flex-end;
+            &__logo {
+                height: 27px;
+                width: 137px;
+                margin: 0;
+                &-container {
+                    display: flex;
+                    margin: 0 80px 7px 80px;
+                }
+            }
+            &__list {
+                @include mixins.flex-direction(row);
+                align-items: last baseline;
+                gap: 15px;
+                    &-link{
+                        max-width: 200px;
+                    }
+            }
+    }
+
+    .footer > :first-child {
+        order: 3;
+    }
+
 }
