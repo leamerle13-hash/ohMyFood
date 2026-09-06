@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ohmyfood</title>
-        <meta name="description" content="ohmyfood landing page">
+        <title>ohmyfood - La palette du gout</title>
+        <meta name="description" content="carte du restaurant La palette du gout sur ohmyfood">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
             integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -18,128 +18,100 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&
             family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="../assets/style.css">
     </head>
     <body>
-        <header>
-            <div class="header__logo-container">
-                <img class="header__logo" src="assets/images/logo/ohmyfood.png" alt="ohmyfood logo">
-            </div>
-            <div class="header__location-container">
-                <i class="fa-solid fa-location-dot"></i>
-                <p>Paris, Belleville</p>
-            </div>
+        <header class="header__restaurant">
+                <a href="../index.html"><i class="fa-solid fa-arrow-left-long header__restaurant-icon"></i></a>
+                <img class="header__restaurant-logo" src="../assets/images/logo/ohmyfood.png" alt="ohmyfood logo">
         </header>
-
         <main class="main">
-            <section class="explore">
-                <h1 class="explore__title">Réservez le menu qui vous convient</h1>
-                <h2 class="explore__subtitle">Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
-                <a class="explore__button" href="#restaurants-section">Explorer nos restaurants</a>
-            </section>
-            <section class="steps">
-                <div class="steps__content">
-                    <h2 class="steps__title">Fonctionnement</h2>
-                    <div class="steps__wrapper">
-                        <div class="steps__box">
-                            <span class="steps__box-number">1</span>
-                            <i class="fa-solid fa-mobile-screen steps__box-icon"></i>
-                            <p class="steps__box-text">Choisissez un restaurant</p>
-                        </div>
-                        <div class="steps__box">
-                            <span class="steps__box-number">2</span>
-                            <i class="fa-solid fa-list steps__box-icon"></i>
-                            <p class="steps__box-text">Composez votre menu</p>
-                        </div>
-                        <div class="steps__box">
-                            <span class="steps__box-number">3</span>
-                            <i class="fa-solid fa-store steps__box-icon purple"></i>
-                            <p class="steps__box-text">Dégustez au restaurant</p>
-                        </div>
-                    </div>
+            <img class="restaurant__picture" src="../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du restaurant La Palette du Gout">
+            <div class="menu__container">
+                <div class="restaurant__info">
+                    <h1 class="restaurant__info-name">La palette du gout</h1>
+                    <i class="fa-regular fa-heart restaurant__info-icon"></i>
                 </div>
-            </section>
-            <section class="restaurants">
-                <div class="restaurant__wrapper">
-                    <h2 class="restaurants__title" id="restaurants-section">Restaurants</h2>
-                    <div class="restaurants__cards-container">
-                        <a href="restaurants/palette_du_gout.html">
-                            <article class="restaurants__cards">
-                                <div class="restaurants__cards-img-container">
-                                    <img class="restaurants__cards-img" src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du restaurant La Palette du Gout">
-                                    <div class="restaurants__cards-new">
-                                        <p>Nouveau</p>
-                                    </div>
-                                </div>
-                                <div class="restaurants__cards-text-container">
-                                    <div>
-                                        <h3 class="restaurants__cards-title">La palette du goût</h3>
-                                        <h4 class="restaurants__cards-location">Ménilmontant</h4>
-                                    </div>
-                                    <div class="restaurants__cards-heart-container">
-                                        <i class="fa-regular fa-heart restaurants__cards-heart"></i>
-                                    </div>
-                                    <!-- <i class="fa-solid fa-heart restaurants__cards-heart-full"></i> -->
-                                </div>
-                            </article>
-                        </a>
-                        <a href="">
-                            <article class="restaurants__cards">
-                                <div class="restaurants__cards-img-container">
-                                    <img class="restaurants__cards-img" src="assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photo du restaurant La Note Enchantée">
-                                    <div class="restaurants__cards-new">
-                                        <p>Nouveau</p>
-                                    </div>
-                                </div>
-                                <div class="restaurants__cards-text-container">
-                                    <div>
-                                        <h3 class="restaurants__cards-title">La note enchantée</h3>
-                                        <h4 class="restaurants__cards-location">Charonne</h4>
-                                    </div>
-                                    <div class="restaurants__cards-heart-container">
-                                        <i class="fa-regular fa-heart restaurants__cards-heart"></i>
-                                    </div>
-                                </div>
-                            </article>
-                        </a>
-                        <a href="">
-                            <article class="restaurants__cards">
-                                <div class="restaurants__cards-img-container">
-                                    <img class="restaurants__cards-img" src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photo du restaurant A la Française">
-                                </div> 
-                                <div class="restaurants__cards-text-container">
-                                    <div>
-                                        <h3 class="restaurants__cards-title">À la française</h3>
-                                        <h4 class="restaurants__cards-location">Cité Rouge</h4>
-                                    </div>
-                                    <div class="restaurants__cards-heart-container">
-                                        <i class="fa-regular fa-heart restaurants__cards-heart"></i>
-                                    </div>
-                                </div>
-                            </article>
-                        </a>
-                        <a href="">
-                            <article class="restaurants__cards">
-                                <div class="restaurants__cards-img-container">
-                                    <img class="restaurants__cards-img" src="assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photo du restaurant Le délice des sens">
-                                </div>
-                                <div class="restaurants__cards-text-container">
-                                    <div>
-                                        <h3 class="restaurants__cards-title">Le délice des sens</h3>
-                                        <h4 class="restaurants__cards-location">Folie-Méricourt</h4>
-                                    </div>
-                                    <div class="restaurants__cards-heart-container">
-                                        <i class="fa-regular fa-heart restaurants__cards-heart"></i>
-                                    </div>
-                                </div>
-                            </article>
-                        </a>
-                    </div>
-                    
+                <section class="section__menu">
+                    <h2 class="section__menu-title">Entrées</h2>
+                    <span class="section__menu-bar"></span>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Fricassée d'escargots</h3>
+                               <h4>Au piment d'Espelette </h4> 
+                            </div>
+                            <p class="section__menu-price">25€</p>
+                        </article>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Foie gras de canard mi-cuit</h3>
+                               <h4>Et ses copeaux de truffe noire</h4> 
+                            </div>
+                            <p class="section__menu-price">35€</p>
+                        </article>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Œuf au plat</h3>
+                               <h4>Assaisonné à la truffe sur lit de caviar</h4> 
+                            </div>
+                            <p class="section__menu-price">20€</p>
+                        </article>
+                </section>
+                <section class="section__menu">
+                    <h2 class="section__menu-title">Plats</h2>
+                    <span class="section__menu-bar"></span>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Filet de bœuf aux herbes</h3>
+                               <h4>Accompagné de sa ribambelle de légumes</h4> 
+                            </div>
+                            <p class="section__menu-price">40€</p>
+                        </article>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Parmentier de queue de bœuf</h3>
+                               <h4>À la truffe noire sur sa purée de panais</h4> 
+                            </div>
+                            <p class="section__menu-price">35€</p>
+                        </article>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Filet de turbot</h3>
+                               <h4>Aux agrumes</h4> 
+                            </div>
+                            <p class="section__menu-price">44€</p>
+                        </article>
+                </section>
+                <section class="section__menu">
+                    <h2 class="section__menu-title">Desserts</h2>
+                    <span class="section__menu-bar"></span>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Paris-Brest</h3>
+                               <h4>Revisité</h4> 
+                            </div>
+                            <p class="section__menu-price">18€</p>
+                        </article>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Macaron au chocolat d'exception </h3>
+                               <h4>Et glace à la vanille de Madagascar</h4> 
+                            </div>
+                            <p class="section__menu-price">22€</p>
+                        </article>
+                        <article class="section__menu-dish">
+                            <div>
+                               <h3>Mousse au chocolat </h3>
+                               <h4>Au piment d'Espelette et à la truffe noire</h4> 
+                            </div>
+                            <p class="section__menu-price">23€</p>
+                        </article>
+                </section>
+                <div class="menu__container-button">
+                   <button>Commander</button> 
                 </div>
-            </section>
+            </div>
         </main>
-
         <footer class="footer">
             <div class="footer__logo-container">
                 <svg class="footer__logo" width="196" height="34" viewBox="0 0 196 34" fill="none" xmlns="http://www.w3.org/2000/svg">
