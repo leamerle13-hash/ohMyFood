@@ -20,101 +20,190 @@
             family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../assets/style.css">
     </head>
-    <body>
-        <header class="header__restaurant">
-                <a href="../index.html"><i class="fa-solid fa-arrow-left-long header__restaurant-icon"></i></a>
-                <img class="header__restaurant-logo" src="../assets/images/logo/ohmyfood.png" alt="ohmyfood logo">
+    <body class="body">
+        <header class="restaurant-header">
+                <a href="../index.html"><i class="fa-solid fa-arrow-left-long restaurant-header__icon"></i></a>
+                <img class="restaurant-header__logo" src="../assets/images/logo/ohmyfood.png" alt="ohmyfood logo">
         </header>
         <main class="main">
-            <img class="restaurant__picture" src="../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du restaurant La Palette du Gout">
-            <div class="menu__container">
-                <div class="restaurant__info">
-                    <h1 class="restaurant__info-name">La palette du gout</h1>
-                    <i class="fa-regular fa-heart restaurant__info-icon"></i>
+            <div class="menu">
+                <div class="restaurant">
+                    <h1 class="restaurant__name">La palette du gout</h1>
+                    <i class="fa-regular fa-heart restaurant__icon"></i>
                 </div>
-                <section class="section__menu">
-                    <h2 class="section__menu-title">Entrées</h2>
-                    <span class="section__menu-bar"></span>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Fricassée d'escargots</h3>
-                               <h4>Au piment d'Espelette </h4> 
+                <section class="menu__section">
+                    <h2 class="menu__title">Entrées</h2>
+                    <span class="menu__bar"></span>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Fricassée d'escargots</h3>
+                               <h4 class="menu__dish-description">Au piment d'Espelette</h4> 
                             </div>
-                            <p class="section__menu-price">25€</p>
-                        </article>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Foie gras de canard mi-cuit</h3>
-                               <h4>Et ses copeaux de truffe noire</h4> 
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">25€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p class="section__menu-price">35€</p>
                         </article>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Œuf au plat</h3>
-                               <h4>Assaisonné à la truffe sur lit de caviar</h4> 
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Foie gras de canard mi-cuit</h3>
+                               <h4 class="menu__dish-description">Et ses copeaux de truffe noire</h4> 
                             </div>
-                            <p class="section__menu-price">20€</p>
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">35€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
+                            </div>
                         </article>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Œuf au plat</h3>
+                               <h4 class="menu__dish-description">Assaisonné à la truffe sur lit de caviar</h4> 
+                            </div>
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">20€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </article>
+                    </label> 
                 </section>
-                <section class="section__menu">
-                    <h2 class="section__menu-title">Plats</h2>
-                    <span class="section__menu-bar"></span>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Filet de bœuf aux herbes</h3>
-                               <h4>Accompagné de sa ribambelle de légumes</h4> 
+                <section class="menu__section">
+                    <h2 class="menu__title">Plats</h2>
+                    <span class="menu__bar"></span>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Filet de bœuf aux herbes</h3>
+                               <h4 class="menu__dish-description">Accompagné de sa ribambelle de légumes</h4> 
                             </div>
-                            <p class="section__menu-price">40€</p>
-                        </article>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Parmentier de queue de bœuf</h3>
-                               <h4>À la truffe noire sur sa purée de panais</h4> 
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">40€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p class="section__menu-price">35€</p>
                         </article>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Filet de turbot</h3>
-                               <h4>Aux agrumes</h4> 
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Parmentier de queue de bœuf</h3>
+                               <h4 class="menu__dish-description">À la truffe noire sur sa purée de panais</h4> 
                             </div>
-                            <p class="section__menu-price">44€</p>
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">35€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
+                            </div>
                         </article>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Filet de turbot</h3>
+                               <h4 class="menu__dish-description">Aux agrumes</h4> 
+                            </div>
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">44€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </article>
+                    </label>
                 </section>
-                <section class="section__menu">
-                    <h2 class="section__menu-title">Desserts</h2>
-                    <span class="section__menu-bar"></span>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Paris-Brest</h3>
-                               <h4>Revisité</h4> 
+                <section class="menu__section">
+                    <h2 class="menu__title">Desserts</h2>
+                    <span class="menu__bar"></span>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Paris-Brest</h3>
+                               <h4 class="menu__dish-description">Revisité</h4> 
                             </div>
-                            <p class="section__menu-price">18€</p>
-                        </article>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Macaron au chocolat d'exception </h3>
-                               <h4>Et glace à la vanille de Madagascar</h4> 
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">18€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p class="section__menu-price">22€</p>
                         </article>
-                        <article class="section__menu-dish">
-                            <div>
-                               <h3>Mousse au chocolat </h3>
-                               <h4>Au piment d'Espelette et à la truffe noire</h4> 
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Macaron au chocolat d'exception</h3>
+                               <h4 class="menu__dish-description">Et glace à la vanille de Madagascar</h4> 
                             </div>
-                            <p class="section__menu-price">23€</p>
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">22€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
+                            </div>
                         </article>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <article class="menu__dish">
+                            <div class="menu__dish-text">
+                               <h3 class="menu__dish-name">Mousse au chocolat</h3>
+                               <h4 class="menu__dish-description">Au piment d'Espelette et à la truffe noire</h4> 
+                            </div>
+                            <div class="menu__dish-animation">
+                                <p class="menu__dish-price">23€</p>
+                                <span class="menu__dish-check">
+                                    <span class="menu__dish-check-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </article>
+                    </label>
                 </section>
-                <div class="menu__container-button">
+                <div class="menu__button">
                    <button>Commander</button> 
                 </div>
             </div>
         </main>
         <footer class="footer">
-            <div class="footer__logo-container">
-                <svg class="footer__logo" width="196" height="34" viewBox="0 0 196 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="footer__logo">
+                <svg width="196" height="34" viewBox="0 0 196 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.932 7.956C17.196 7.956 19.596 8.61599 21.132 9.936C22.692 11.256 23.472 12.984 23.472 15.12C23.472 15.84 23.376 16.644 23.184 17.532C22.728 19.5 21.876 21.228 20.628 22.716C19.38 24.18 17.844 25.32 16.02 26.136C14.22 26.928 12.264 27.324 10.152 27.324C6.81599 27.324 4.34399 26.664 2.73599 25.344C1.15199 24 0.359985 22.224 0.359985 20.016C0.359985 19.272 0.455985 18.444 0.647985 17.532C1.10399 15.66 1.96799 14.004 3.23999 12.564C4.53599 11.1 6.10799 9.972 7.95599 9.18C9.82799 8.364 11.82 7.956 13.932 7.956ZM13.824 11.16C13.32 11.16 12.78 11.616 12.204 12.528C11.652 13.416 10.992 15.108 10.224 17.604C9.45599 20.1 9.07199 21.852 9.07199 22.86C9.07199 23.388 9.15599 23.748 9.32399 23.94C9.49199 24.108 9.71999 24.192 10.008 24.192C10.512 24.24 11.028 23.808 11.556 22.896C12.108 21.984 12.792 20.208 13.608 17.568C14.352 15.24 14.724 13.548 14.724 12.492C14.724 11.988 14.64 11.64 14.472 11.448C14.328 11.256 14.112 11.16 13.824 11.16Z" fill="currentColor"/>
                     <path d="M44.9899 22.032C44.9419 22.128 44.9179 22.272 44.9179 22.464C44.9179 22.632 44.9539 22.764 45.0259 22.86C45.1219 22.956 45.2419 23.004 45.3859 23.004C45.6739 23.004 45.9139 22.884 46.1059 22.644C46.3219 22.38 46.4659 22.248 46.5379 22.248C46.6579 22.248 46.7539 22.332 46.8259 22.5C46.8979 22.644 46.9339 22.824 46.9339 23.04C46.9579 23.736 46.7299 24.42 46.2499 25.092C45.7699 25.74 45.0619 26.28 44.1259 26.712C43.2139 27.12 42.1099 27.324 40.8139 27.324C39.2299 27.324 37.9699 26.964 37.0339 26.244C36.0979 25.5 35.6179 24.516 35.5939 23.292C35.5939 22.404 35.8099 21.408 36.2419 20.304L38.2219 15.12C38.3419 14.808 38.4019 14.556 38.4019 14.364C38.4019 14.052 38.2939 13.812 38.0779 13.644C37.8859 13.452 37.6459 13.356 37.3579 13.356C36.9019 13.356 36.4339 13.572 35.9539 14.004C35.4979 14.412 35.1259 15.084 34.8379 16.02V15.948L32.5699 23.256C32.4979 23.544 32.4619 23.796 32.4619 24.012C32.4619 24.324 32.5219 24.576 32.6419 24.768C32.7619 24.936 32.9299 25.104 
                         33.1459 25.272C33.3139 25.44 33.4339 25.584 33.5059 25.704C33.5779 25.8 33.5899 25.932 33.5419 26.1C33.4219 26.412 33.1819 26.64 32.8219 26.784C32.4619 26.928 31.9099 27 31.1659 27H22.9579C22.3339 27 21.8779 26.904 21.5899 26.712C21.3019 26.496 21.2059 26.22 21.3019 25.884C21.3979 25.596 21.6499 25.344 22.0579 25.128C22.4179 24.936 22.7179 24.708 22.9579 24.444C23.1979 24.18 23.4019 23.76 23.5699 23.184L29.0419 5.22C29.1139 5.004 29.1499 4.824 29.1499 4.68C29.1499 4.416 29.0779 4.2 28.9339 4.032C28.8139 3.864 28.6459 3.696 28.4299 3.528C28.1899 3.336 28.0099 3.168 27.8899 3.024C27.7939 2.88 27.7819 2.688 27.8539 2.448C27.9979 1.896 28.7539 1.416 30.1219 1.00799C31.4899 0.599996 32.9179 0.395996 34.4059 0.395996C35.7979 0.395996 36.8179 0.659996 37.4659 1.188C38.1379 1.716 38.4739 2.436 38.4739 3.348C38.4739 3.876 38.3899 4.392 38.2219 4.896L36.2779 11.232C37.2139 10.008 38.1979 9.156 39.2299 8.676C40.2859 8.196 41.4259 7.956 42.6499 7.956C44.1139 7.956 45.2899 8.4 
@@ -134,22 +223,22 @@
                 </svg>
             </div>
             <ul class="footer__list">
-                <li class="footer__list-link">
-                    <div class="footer__list-container">
-                        <i class="footer__list-icon fa-solid fa-utensils"></i>
+                <li class="footer__item">
+                    <div class="footer__item-container">
+                        <i class="footer__item-icon fa-solid fa-utensils"></i>
                     </div>
                     Proposer un restaurant
                 </li>
-                <li class="footer__list-link">
-                    <div class="footer__list-container">
-                        <i class="footer__list-icon fa-solid fa-handshake-angle"></i>
+                <li class="footer__item">
+                    <div class="footer__item-container">
+                        <i class="footer__item-icon fa-solid fa-handshake-angle"></i>
                     </div>
                     Devenir partenaire
                 </li> 
             </ul>
             <ul class="footer__list">
-                <li class="footer__list-link">Mentions légales</li>
-                <li class="footer__list-link">Contact</li>
+                <li class="footer__item">Mentions légales</li>
+                <li class="footer__item">Contact</li>
             </ul>
         </footer>
     </body>
