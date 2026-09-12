@@ -26,7 +26,8 @@ a {
 .header__logo-img {
   height: 35px;
 }
-.header__location {
+
+.location {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -35,7 +36,6 @@ a {
   align-items: center;
   height: 50px;
   gap: 17px;
-  margin-bottom: 7px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
@@ -45,7 +45,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f3f3f3;
   padding: 40px;
   text-align: center;
 }
@@ -68,7 +67,7 @@ a {
   border-radius: 25px;
   color: white;
   text-decoration: none;
-  transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
+  transition: opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 .explore__button:hover {
   opacity: 0.7;
@@ -132,6 +131,9 @@ a {
   position: relative;
   height: 70%;
 }
+.restaurants__wrapper {
+  position: relative;
+}
 .restaurants__cards {
   width: 100%;
   height: 251px;
@@ -178,13 +180,31 @@ a {
   font-weight: 300;
 }
 .restaurants__cards-heart {
-  height: 20px;
-  margin-right: 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 205px;
+  right: 15px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
 }
-.restaurants__cards-heart-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.restaurants__cards-heart-full {
+  font-size: 20px;
+  position: absolute;
+  top: 205px;
+  right: 15px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+.restaurants__cards-heart-full:hover {
+  opacity: 1;
+}
+.restaurants__cards-heart:hover {
+  opacity: 0;
 }
 
 .footer {
@@ -213,12 +233,8 @@ a {
   margin-right: 6px;
   font-size: 13px;
 }
-
-.body {
-  background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-  background-position: center 62px;
-  background-repeat: no-repeat;
-  background-size: contain;
+.footer__item a {
+  color: white;
 }
 
 .restaurant-header {
@@ -242,8 +258,31 @@ a {
   width: 100%;
   background-color: #f3f3f3;
   border-radius: 30px 30px 0 0;
-  margin-top: 230px;
+  margin-top: -40px;
   padding: 35px 17px;
+  z-index: 1;
+  position: relative;
+}
+.menu__img {
+  z-index: 0;
+}
+.menu__img img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.menu__section {
+  opacity: 0;
+  animation: appear 2s forwards;
+}
+.menu__section:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.menu__section:nth-child(2) {
+  animation-delay: 1s;
+}
+.menu__section:nth-child(3) {
+  animation-delay: 1.5s;
 }
 .menu__title {
   font-size: 1rem;
@@ -264,6 +303,7 @@ a {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
   border-radius: 20px;
   margin-bottom: 25px;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   margin-top: 12px;
@@ -295,13 +335,19 @@ a {
 }
 .menu__dish-check {
   width: 0;
+  height: 100%;
   margin-left: 10px;
   background-color: #99E2D0;
   border-radius: 0 20px 20px 0;
-  transition: all 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 .menu__dish-check-icon {
-  display: none;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .menu__dish-check-icon > i {
   font-size: 25px;
@@ -322,27 +368,20 @@ a {
   border-radius: 25px;
   color: white;
   text-decoration: none;
+  cursor: pointer;
   font-size: 1rem;
+  transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+.menu__button button:hover {
+  opacity: 0.7;
+  box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
 label:has(input:checked) .menu__dish-check {
-  display: block;
   width: 100px;
-  height: 100%;
-  transform: scale(1);
 }
 label:has(input:checked) .menu__dish-check-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-label:not(:has(input:checked)) .menu__dish-check {
-  display: block;
-  width: 0;
-  transition: width 1s ease-in-out;
+  opacity: 1;
 }
 
 input {
@@ -364,10 +403,23 @@ input {
   margin-right: 15px;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @media (min-width: 768px) {
   .header__logo,
   .header__location {
     box-shadow: none;
+  }
+  .explore {
+    background-color: #f3f3f3;
   }
   .explore__title {
     max-width: none;
@@ -399,7 +451,17 @@ input {
     justify-content: center;
     align-items: center;
   }
-  .restaurant__wrapper {
+  .body {
+    background-color: white;
+  }
+  #wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .restaurant__wrapper,
+  .menu {
     max-width: 1024px;
     width: 100%;
   }
@@ -434,6 +496,12 @@ input {
   }
   .footer > :first-child {
     order: 3;
+  }
+  .restaurant {
+    justify-content: center;
+  }
+  .restaurant i {
+    margin-left: 30px;
   }
 }
 

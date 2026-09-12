@@ -30,73 +30,73 @@ a {
             height: 35px;
         }
     }
-    &__location {
-        @include mixins.full-width;
-        @include mixins.flex-direction(row);
-        @include mixins.center;
-        height: 50px;
-        gap: 17px;
-        margin-bottom: 7px;
-        box-shadow: 0px 4px 10px 0px #00000040;
-    }
 }
 
 
 //MAIN
 
+.location {
+    @include mixins.full-width;
+    @include mixins.flex-direction(row);
+    @include mixins.center;
+    height: 50px;
+    gap: 17px;
+    box-shadow: 0px 4px 10px 0px #00000040;
+}
+
 .explore {
     @include mixins.flex-direction(column);
     @include mixins.center;
-    background-color: variables.$light-grey-background;
+    // background-color: variables.$light-grey-background;
     padding: 40px;
     text-align: center;
-        &__title {
-            font-size: variables.$section-title;
-            max-width: 275px;
-        }
-        &__subtitle {
-            font-size: variables.$subtitle;
-            font-weight: 300;
-            padding: 20px 0;
-        }
-        &__button {
-            @include mixins.large-button;
-            transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
-                &:hover {
-                    opacity: 0.7;
-                    box-shadow: 0px 6px 16px 0px #00000040;
-                }
-        }
+    &__title {
+        font-size: variables.$section-title;
+        max-width: 275px;
+    }
+    &__subtitle {
+        font-size: variables.$subtitle;
+        font-weight: 300;
+        padding: 20px 0;
+    }
+    &__button {
+        @include mixins.large-button;
+        transition: opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            &:hover {
+                opacity: 0.7;
+                box-shadow: 0px 6px 16px 0px #00000040;
+            }
+    }
             
 }
 
 .steps {
     padding: 20px;
     background-color: white;
-        &__title {
-            font-size: variables.$section-title;
-            padding: 26px 0;
-        }
-        &__box {
-            @include mixins.flex-direction(row);
-            @include mixins.rectangle;
-            padding: 28px 0;
-            background-color: variables.$light-grey-background;
-            position: relative;
-            margin-left: 8px;
-                &-number {
-                    @include mixins.round-button;
-                    position: absolute;
-                    left: -12px;
-                }
-                &-icon {
-                    color: variables.$dark-grey;
-                    padding: 0 30px;
-                }
-                &-text {
-                    font-weight: 500;
-                }
+    &__title {
+        font-size: variables.$section-title;
+        padding: 26px 0;
+    }
+    &__box {
+        @include mixins.flex-direction(row);
+        @include mixins.rectangle;
+        padding: 28px 0;
+        background-color: variables.$light-grey-background;
+        position: relative;
+        margin-left: 8px;
+            &-number {
+                @include mixins.round-button;
+                position: absolute;
+                left: -12px;
             }
+            &-icon {
+                color: variables.$dark-grey;
+                padding: 0 30px;
+            }
+            &-text {
+                font-weight: 500;
+            }
+        }
 }
 
 .purple {
@@ -108,60 +108,73 @@ a {
 .restaurants {
     padding: 60px 20px;
     background-color: variables.$grey-background;
-        &__title {
-            font-size: variables.$section-title;
-            margin-bottom: 20px;
+    &__title {
+        font-size: variables.$section-title;
+        margin-bottom: 20px;
+    }
+    &__cards-img-container {
+        position: relative;
+        height: 70%;
+    }
+    &__wrapper {
+        position: relative;
         }
-        &__cards-img-container {
-            position: relative;
-            height: 70%;
+    &__cards {
+        @include mixins.card;
+        margin-bottom: 20px;
+        &-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
         }
-        &__cards {
-            @include mixins.card;
-            margin-bottom: 20px;
-            &-img {
-                width: 100%;
-                height: 100%;
-                border-radius: 15px 15px 0 0;
-                object-fit: cover;
-            }
-            &-new {
-                @include mixins.center;
-                position: absolute;
-                top: 10px;
-                right: 10px;    
-                padding: 7px 9px;
-                border-radius: 2px;
-                width: 80px;
-                background-color: variables.$light-green;
-                color: variables.$dark-green;
-                font-size: 14px;
-            }
-            &-text-container {
-                @include mixins.flex-direction(row);
-                justify-content: space-between;
-                padding: 10px;
-                height: 30%;
-                color: black;
-                border-radius: 0 0 15px 15px;
-            }
-            &-title {
-                font-size: variables.$subtitle;
-                margin-bottom: 5px;
-            }
-            &-location {
-                font-size: variables.$paragraph;
-                font-weight: 300;
-            }
-            &-heart {
-                height: 20px;
-                margin-right: 10px;
-                &-container {
-                    @include mixins.center;  
+        &-new {
+            @include mixins.center;
+            position: absolute;
+            top: 10px;
+            right: 10px;    
+            padding: 7px 9px;
+            border-radius: 2px;
+            width: 80px;
+            background-color: variables.$light-green;
+            color: variables.$dark-green;
+            font-size: 14px;
+        }
+        &-text-container {
+            @include mixins.flex-direction(row);
+            justify-content: space-between;
+            padding: 10px;
+            height: 30%;
+            color: black;
+            border-radius: 0 0 15px 15px;
+        }
+        &-title {
+            font-size: variables.$subtitle;
+            margin-bottom: 5px;
+        }
+        &-location {
+            font-size: variables.$paragraph;
+            font-weight: 300;
+        }
+        &-heart {
+            @include mixins.heart;
+            &-full {
+                @include mixins.heart;
+                background: variables.$gradient;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                opacity: 0;
+                &:hover {
+                    opacity: 1;
                 }
             }
-            
+            &:hover {
+                opacity: 0;
+            }
         }
+            
+    }
 }
 
 
@@ -190,17 +203,14 @@ a {
             margin-right: 6px;
             font-size: 13px;
         }
+        a {
+            color: white;
+        }
     }
 }
 
 // PAGE DES RESTAURANTS
 
-.body {
-    background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-    background-position: center 62px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
 .restaurant-header {
     @include mixins.full-width;
@@ -221,8 +231,31 @@ a {
     width: 100%;
     background-color: variables.$light-grey-background;
     border-radius: 30px 30px 0 0;
-    margin-top: 230px;
+    margin-top: -40px;
     padding: 35px 17px;
+    z-index: 1;
+    position: relative;
+    &__img {
+        z-index: 0;
+        & img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__section {
+        opacity: 0;
+        animation: appear 2s forwards;
+        &:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        &:nth-child(2) {
+            animation-delay: 1s;
+        }
+        &:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+    }
     &__title {
         font-size: variables.$paragraph;
         font-weight: 300;
@@ -239,7 +272,7 @@ a {
     }
     &__dish {
         @include mixins.rectangle;
-        // padding: 14px;
+        background-color: white;
         display: flex;
         justify-content: space-between;
         margin-top: 12px;
@@ -257,7 +290,6 @@ a {
             font-weight: 300;
         }
         &-animation {
-            // width: 30%;
             width: 150px;
             display: flex;
             align-items: flex-end;
@@ -271,12 +303,16 @@ a {
         }
         &-check {
             width: 0;
+            height: 100%;
             margin-left: 10px;
             background-color: variables.$light-green;
             border-radius: 0 20px 20px 0;
-            transition: all 1s ease-in-out;
+            transition: width 1s ease-in-out;
             &-icon {
-                display: none;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                @include mixins.center;
                 > i {
                     font-size: 25px;
                     color: white;
@@ -288,29 +324,22 @@ a {
         @include mixins.center;
         button {
             @include mixins.large-button;
+            cursor: pointer;
             font-size: variables.$paragraph;
+            transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
+            &:hover {
+                opacity: 0.7;
+                box-shadow: 0px 6px 16px 0px #00000040;
+            }
         }
     }
 }
 
 label:has(input:checked) .menu__dish-check {
-    display: block;
     width: 100px;
-    height: 100%;
-    transform: scale(1);
     &-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
+        opacity: 1;
     }
-}
-
-label:not(:has(input:checked)) .menu__dish-check {
-    display: block;
-    width: 0;
-    transition: width 1s ease-in-out;
 }
 
 input {
@@ -333,6 +362,18 @@ input {
     }
 }
 
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 // TABLETTE
 
 @media (min-width: 768px) {
@@ -341,9 +382,12 @@ input {
         box-shadow: none;
     }
 
-    .explore__title {
-        max-width: none;
-        font-size: variables.$large-title;
+    .explore {
+        background-color: variables.$light-grey-background;
+        &__title {
+            max-width: none;
+            font-size: variables.$large-title;
+        }
     }
 
     .steps {
@@ -370,7 +414,17 @@ input {
         @include mixins.center;
     }
 
-    .restaurant__wrapper {
+    .body {
+        background-color: white;
+    }
+
+    #wrapper {
+        width: 100%;
+        @include mixins.center;
+    }
+
+    .restaurant__wrapper,
+    .menu {
         max-width: 1024px;
         width: 100%;
     }
@@ -409,5 +463,14 @@ input {
 
     .footer > :first-child {
         order: 3;
+    }
+
+
+
+    .restaurant {
+        justify-content: center;
+        & i {
+            margin-left: 30px;
+        }
     }
 }
