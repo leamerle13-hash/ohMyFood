@@ -17,6 +17,55 @@ a {
     color: black;
 }
 
+.loader {
+    z-index: 1;
+    position: fixed;
+    inset: 0;
+    @include mixins.center;
+    background-color: variables.$light-grey-background;
+    gap: 50px;
+    animation: hiddeloader 1s ease-in-out forwards;
+    animation-delay: 1s;
+    &__square {
+        z-index: 2;
+        height: 50px;
+        width: 50px;
+        background: variables.$gradient;
+        animation: rotate 1s ease-in-out forwards;
+        &:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        &:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        &:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+@keyframes hiddeloader {
+    from {
+        opacity: 1;
+    }
+    to {
+        display: none;
+    }
+}
+
 //HEADER
 
 .header {
@@ -47,7 +96,6 @@ a {
 .explore {
     @include mixins.flex-direction(column);
     @include mixins.center;
-    // background-color: variables.$light-grey-background;
     padding: 40px;
     text-align: center;
     &__title {
@@ -233,7 +281,7 @@ a {
     border-radius: 30px 30px 0 0;
     margin-top: -40px;
     padding: 35px 17px;
-    z-index: 1;
+    z-index: 3;
     position: relative;
     &__img {
         z-index: 0;
@@ -357,10 +405,36 @@ input {
         font-size: variables.$restaurant-name;
     }
     &__icon {
-        font-size: 22px;
-        margin-right: 15px;
+        font-size: 20px;
+        position: absolute;
+        top: 45px;
+        right: 25px;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+        &:hover {
+            opacity: 0;
+        }
+        &-full {
+            font-size: 20px;
+            position: absolute;
+            top: 45px;
+            right: 25px;
+            cursor: pointer;
+            opacity: 0;
+            background: variables.$gradient;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 1s ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }
+
+
+
 
 
 @keyframes appear {
@@ -404,6 +478,19 @@ input {
         @include mixins.center;
         @include mixins.flex-direction(row);
         gap: 24px;
+    }
+
+    .restaurant__icon,
+    .restaurant__icon-full {
+        right: 330px;
+    }
+
+    .restaurant {
+        justify-content: center;
+        &__icon,
+        &__icon-full {
+            right: 220px;
+        }
     }
 }
 
@@ -465,12 +552,11 @@ input {
         order: 3;
     }
 
-
-
     .restaurant {
         justify-content: center;
-        & i {
-            margin-left: 30px;
+        &__icon,
+        &__icon-full {
+            right: 350px;
         }
     }
 }
