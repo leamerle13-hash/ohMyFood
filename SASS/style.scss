@@ -24,14 +24,14 @@ a {
     @include mixins.center;
     background-color: variables.$light-grey-background;
     gap: 50px;
-    animation: hiddeloader 1s ease-in-out forwards;
-    animation-delay: 1s;
+    animation: hiddeloader 2s ease-in-out forwards;
+    animation-delay: 1.5s;
     &__square {
         z-index: 2;
         height: 50px;
         width: 50px;
         background: variables.$gradient;
-        animation: rotate 1s ease-in-out forwards;
+        animation: bounce 1s ease-in-out forwards;
         &:nth-child(1) {
             animation-delay: 0.3s;
         }
@@ -44,27 +44,7 @@ a {
     }
 }
 
-@keyframes rotate {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 0;
-    }
-}
 
-@keyframes hiddeloader {
-    from {
-        opacity: 1;
-    }
-    to {
-        display: none;
-    }
-}
 
 //HEADER
 
@@ -141,14 +121,13 @@ a {
                 color: variables.$dark-grey;
                 padding: 0 30px;
             }
+            &-purple {
+                    color: variables.$purple;
+                }
             &-text {
                 font-weight: 500;
             }
         }
-}
-
-.purple {
-    color: variables.$purple;
 }
 
 //RESTAURANTS
@@ -327,15 +306,19 @@ a {
         cursor: pointer;
         &-text {
             padding: 14px;
+            @include mixins.flex-direction(column);
+            @include mixins.ellipsis;
         }
         &-name {
             font-size: variables.$subtitle;
             font-weight: 500;
             margin-bottom: 5px;
+            @include mixins.ellipsis;
         }
         &-description {
             font-size: variables.$paragraph;
             font-weight: 300;
+            @include mixins.ellipsis;
         }
         &-animation {
             width: 150px;
@@ -368,6 +351,7 @@ a {
             }
         }
     }
+    &
     &__button {
         @include mixins.center;
         button {
@@ -383,7 +367,7 @@ a {
     }
 }
 
-label:has(input:checked) .menu__dish-check {
+.menu__label:has(input:checked) .menu__dish-check {
     width: 100px;
     &-icon {
         opacity: 1;
@@ -410,32 +394,44 @@ input {
         top: 45px;
         right: 25px;
         cursor: pointer;
-        transition: all 1s ease-in-out;
-        &:hover {
-            opacity: 0;
-        }
-        &-full {
-            font-size: 20px;
-            position: absolute;
-            top: 45px;
-            right: 25px;
-            cursor: pointer;
-            opacity: 0;
-            background: variables.$gradient;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: all 1s ease-in-out;
-            &:hover {
-                opacity: 1;
-            }
-        }
+        transition: all 0.4s ease-in-out; 
+    }
+    &__checkbox:has(input:checked) i {
+        background: variables.$gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__checkbox:has(input:checked) i::before {
+        content: "\f004";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
     }
 }
 
 
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
 
-
+@keyframes hiddeloader {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        z-index: -100;
+    }
+}
 
 @keyframes appear {
     from {

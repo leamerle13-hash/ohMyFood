@@ -23,15 +23,15 @@ a {
   align-items: center;
   background-color: #f3f3f3;
   gap: 50px;
-  animation: hiddeloader 1s ease-in-out forwards;
-  animation-delay: 1s;
+  animation: hiddeloader 2s ease-in-out forwards;
+  animation-delay: 1.5s;
 }
 .loader__square {
   z-index: 2;
   height: 50px;
   width: 50px;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  animation: rotate 1s ease-in-out forwards;
+  animation: bounce 1s ease-in-out forwards;
 }
 .loader__square:nth-child(1) {
   animation-delay: 0.3s;
@@ -43,26 +43,6 @@ a {
   animation-delay: 0.9s;
 }
 
-@keyframes rotate {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-}
-@keyframes hiddeloader {
-  from {
-    opacity: 1;
-  }
-  to {
-    display: none;
-  }
-}
 .header__logo {
   width: 100%;
   display: flex;
@@ -160,12 +140,11 @@ a {
   color: #7E7E7E;
   padding: 0 30px;
 }
+.steps__box-purple {
+  color: #9356DC;
+}
 .steps__box-text {
   font-weight: 500;
-}
-
-.purple {
-  color: #9356DC;
 }
 
 .restaurants {
@@ -360,15 +339,26 @@ a {
 }
 .menu__dish-text {
   padding: 14px;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu__dish-name {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu__dish-description {
   font-size: 1rem;
   font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu__dish-animation {
   width: 150px;
@@ -402,12 +392,12 @@ a {
   font-size: 25px;
   color: white;
 }
-.menu__button {
+.menu .menu__button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.menu__button button {
+.menu .menu__button button {
   width: 218px;
   height: 50px;
   padding: 13px 18px;
@@ -421,15 +411,15 @@ a {
   font-size: 1rem;
   transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
 }
-.menu__button button:hover {
+.menu .menu__button button:hover {
   opacity: 0.7;
   box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
-label:has(input:checked) .menu__dish-check {
+.menu__label:has(input:checked) .menu__dish-check {
   width: 100px;
 }
-label:has(input:checked) .menu__dish-check-icon {
+.menu__label:has(input:checked) .menu__dish-check-icon {
   opacity: 1;
 }
 
@@ -453,28 +443,41 @@ input {
   top: 45px;
   right: 25px;
   cursor: pointer;
-  transition: all 1s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
-.restaurant__icon:hover {
-  opacity: 0;
-}
-.restaurant__icon-full {
-  font-size: 20px;
-  position: absolute;
-  top: 45px;
-  right: 25px;
-  cursor: pointer;
-  opacity: 0;
+.restaurant__checkbox:has(input:checked) i {
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 1s ease-in-out;
 }
-.restaurant__icon-full:hover {
-  opacity: 1;
+.restaurant__checkbox:has(input:checked) i::before {
+  content: "\f004";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+@keyframes hiddeloader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -100;
+  }
+}
 @keyframes appear {
   from {
     opacity: 0;
