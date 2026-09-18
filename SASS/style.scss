@@ -13,6 +13,10 @@ body {
     background-color: variables.$grey-background;
 }
 
+input {
+    display: none;
+}
+
 a {
     color: black;
 }
@@ -89,6 +93,7 @@ a {
     }
     &__button {
         @include mixins.large-button;
+        @include mixins.center;
         transition: opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
             &:hover {
                 opacity: 0.7;
@@ -304,6 +309,7 @@ a {
         justify-content: space-between;
         margin-top: 12px;
         cursor: pointer;
+        overflow: hidden;
         &-text {
             padding: 14px;
             @include mixins.flex-direction(column);
@@ -374,11 +380,6 @@ a {
     }
 }
 
-input {
-    display: none;
-}
-
-
 .restaurant {
     width: 100%;
     display: flex;
@@ -390,9 +391,7 @@ input {
     }
     &__icon {
         font-size: 20px;
-        position: absolute;
-        top: 45px;
-        right: 25px;
+        margin-left: 20px;
         cursor: pointer;
         transition: all 0.4s ease-in-out; 
     }
@@ -406,6 +405,7 @@ input {
         content: "\f004";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
+        
     }
 }
 
@@ -510,6 +510,15 @@ input {
     .menu {
         max-width: 1024px;
         width: 100%;
+    }
+
+    .menu__dish {
+        width: 750px;
+    }
+
+    .menu__wrapper {
+        @include mixins.center;
+        @include mixins.flex-direction(column);
     }
 
     .restaurants__cards-container {

@@ -10,6 +10,10 @@ body {
   background-color: #EAEAEA;
 }
 
+input {
+  display: none;
+}
+
 a {
   color: black;
 }
@@ -96,6 +100,9 @@ a {
   border-radius: 25px;
   color: white;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 .explore__button:hover {
@@ -336,6 +343,7 @@ a {
   justify-content: space-between;
   margin-top: 12px;
   cursor: pointer;
+  overflow: hidden;
 }
 .menu__dish-text {
   padding: 14px;
@@ -423,10 +431,6 @@ a {
   opacity: 1;
 }
 
-input {
-  display: none;
-}
-
 .restaurant {
   width: 100%;
   display: flex;
@@ -439,9 +443,7 @@ input {
 }
 .restaurant__icon {
   font-size: 20px;
-  position: absolute;
-  top: 45px;
-  right: 25px;
+  margin-left: 20px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
@@ -549,6 +551,16 @@ input {
   .menu {
     max-width: 1024px;
     width: 100%;
+  }
+  .menu__dish {
+    width: 750px;
+  }
+  .menu__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
   .restaurants__cards-container {
     display: grid;
