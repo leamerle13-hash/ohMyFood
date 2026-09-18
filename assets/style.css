@@ -222,25 +222,6 @@ a {
   cursor: pointer;
   transition: all 1s ease-in-out;
 }
-.restaurants__cards-heart-full {
-  font-size: 20px;
-  position: absolute;
-  top: 205px;
-  right: 15px;
-  cursor: pointer;
-  transition: all 1s ease-in-out;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
-}
-.restaurants__cards-heart-full:hover {
-  opacity: 1;
-}
-.restaurants__cards-heart:hover {
-  opacity: 0;
-}
 
 .footer {
   background-color: #353535;
