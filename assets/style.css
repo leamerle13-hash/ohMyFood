@@ -381,12 +381,12 @@ a {
   font-size: 25px;
   color: white;
 }
-.menu .menu__button {
+.menu__button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.menu .menu__button button {
+.menu__button button {
   width: 218px;
   height: 50px;
   padding: 13px 18px;
@@ -400,7 +400,7 @@ a {
   font-size: 1rem;
   transition: opacity 0.2s ease-in, box-shadow 0.2s ease-in;
 }
-.menu .menu__button button:hover {
+.menu__button button:hover {
   opacity: 0.7;
   box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.2509803922);
 }
@@ -458,7 +458,7 @@ a {
   }
   to {
     opacity: 0;
-    z-index: -100;
+    visibility: hidden;
   }
 }
 @keyframes appear {
