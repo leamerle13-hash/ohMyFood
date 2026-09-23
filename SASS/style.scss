@@ -312,7 +312,6 @@ a {
             @include mixins.ellipsis;
         }
         &-animation {
-            width: 150px;
             display: flex;
             align-items: flex-end;
             justify-content: end;
@@ -342,6 +341,16 @@ a {
             }
         }
     }
+    &__label {
+        &:has(input:checked) {
+            .menu__dish-check {
+                width: 100px;
+                &-icon {
+                    opacity: 1;
+                }
+            }
+        }
+    }
     &__button {
         @include mixins.center;
         button {
@@ -357,12 +366,7 @@ a {
     }
 }
 
-.menu__label:has(input:checked) .menu__dish-check {
-    width: 100px;
-    &-icon {
-        opacity: 1;
-    }
-}
+
 
 .restaurant {
     width: 100%;
@@ -383,13 +387,11 @@ a {
         background: variables.$gradient;
         background-clip: text;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
     &__checkbox:has(input:checked) i::before {
         content: "\f004";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
-        
     }
 }
 
